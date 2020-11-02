@@ -1,0 +1,18 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1
+ARG BUILD_CONFIGURATION=Debug
+ENV ASPNETCORE_ENVIRONMENT=Development
+ENV ASPNETCORE_URLS=http://+:80
+ENV DOTNET_USE_POLLING_FILE_WATCHER=true
+EXPOSE 80
+
+WORKDIR /src
+COPY ["ielts-writing-microservices-taskSampleAPI/ielts_writing_microservices_taskSampleAPI.csproj", "ielts-writing-microservices-taskSampleAPI/"]
+
+RUN dotnet restore "ielts-writing-microservices-taskSampleAPI/ielts_writing_microservices_taskSampleAPI.csproj"
+COPY . .
+WORKDIR "/src/ielts-writing-microservices-taskSampleAPI"
+RUN dotnet build --no-restore "ielts_writing_microservices_taskSampleAPI.csproj" -c $BUILD_CONFIGURATION
+
+RUN echo "exec dotnet run --no-build --no-launch-profile -c $BUILD_CONFIGURATION --" > /entrypoint.sh
+
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]

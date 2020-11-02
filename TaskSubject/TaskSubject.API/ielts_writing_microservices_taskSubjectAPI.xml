@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ielts_writing_microservices_taskSubjectAPI</name>
+    </assembly>
+    <members>
+        <member name="T:ielts_writing_microservices_taskSubjectAPI.Options.Setup.ConfigureSwaggerGenOptions">
+            <inheritdoc />
+            <summary>
+            Implementation of IConfigureOptions SwaggerGenOptions
+            </summary>
+        </member>
+        <member name="M:ielts_writing_microservices_taskSubjectAPI.Options.Setup.ConfigureSwaggerGenOptions.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider,Microsoft.Extensions.Options.IOptions{RestApi.Example.Utils.Swagger.SwaggerSettings})">
+            <summary>
+            Initializes a new instance of the <see cref="T:ielts_writing_microservices_taskSubjectAPI.Options.Setup.ConfigureSwaggerGenOptions"/> class.
+            </summary>
+            <param name="versionDescriptionProvider">IApiVersionDescriptionProvider</param>
+            <param name="swaggerSettings">App Settings for Swagger</param>
+        </member>
+        <member name="M:ielts_writing_microservices_taskSubjectAPI.Options.Setup.ConfigureSwaggerGenOptions.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:ielts_writing_microservices_taskSubjectAPI.Options.Setup.ConfigureSwaggerUiOptions">
+            <inheritdoc cref="T:Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIOptions"/>>
+        </member>
+        <member name="M:ielts_writing_microservices_taskSubjectAPI.Options.Setup.ConfigureSwaggerUiOptions.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider,Microsoft.Extensions.Options.IOptions{ielts_writing_microservices_taskSubjectAPI.Options.SwaggerOptions})">
+            <inheritdoc />
+        </member>
+        <member name="M:ielts_writing_microservices_taskSubjectAPI.Options.Setup.ConfigureSwaggerUiOptions.Configure(Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIOptions)">
+            <summary>
+            Configure
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="T:RestApi.Example.Utils.Swagger.ConfigureSwaggerOptions">
+            <inheritdoc />
+        </member>
+        <member name="M:RestApi.Example.Utils.Swagger.ConfigureSwaggerOptions.#ctor(Microsoft.Extensions.Options.IOptions{RestApi.Example.Utils.Swagger.SwaggerSettings})">
+            <inheritdoc />
+        </member>
+        <member name="M:RestApi.Example.Utils.Swagger.ConfigureSwaggerOptions.Configure(Swashbuckle.AspNetCore.Swagger.SwaggerOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:RestApi.Example.Utils.Swagger.MiddlewareExtensions">
+            <summary>
+            Extending Swagger services
+            </summary>
+        </member>
+        <member name="M:RestApi.Example.Utils.Swagger.MiddlewareExtensions.UseSwaggerDocuments(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Enabling Swagger UI.
+            Excluding from test environment
+            </summary>
+            <param name="app">IApplicationBuilder</param>
+        </member>
+        <member name="T:RestApi.Example.Utils.Swagger.ServicesExtensions">
+            <summary>
+            Service Collection(IServiceCollection) Extensions
+            </summary>
+        </member>
+        <member name="M:RestApi.Example.Utils.Swagger.ServicesExtensions.AddApiVersionWithExplorer(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add AddVersionedApiExplorer and AddApiVersioning middlewares
+            </summary>
+            <param name="services"></param>
+            <returns>IServiceCollection</returns>
+        </member>
+        <member name="M:RestApi.Example.Utils.Swagger.ServicesExtensions.AddSwaggerOptions(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add swagger services
+            </summary>
+            <param name="services"><see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>/></param>
+            <returns>IServiceCollection</returns>
+        </member>
+        <member name="T:RestApi.Example.Utils.Swagger.SwaggerSettings">
+            <summary>
+            Swagger Configuration
+            </summary>
+        </member>
+        <member name="M:RestApi.Example.Utils.Swagger.SwaggerSettings.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RestApi.Example.Utils.Swagger.SwaggerSettings"/> class.
+            </summary>
+        </member>
+        <member name="P:RestApi.Example.Utils.Swagger.SwaggerSettings.Name">
+            <summary>
+            Gets or sets document Name.
+            </summary>
+        </member>
+        <member name="P:RestApi.Example.Utils.Swagger.SwaggerSettings.Info">
+            <summary>
+            Gets or sets swagger Info.
+            </summary>
+        </member>
+        <member name="P:RestApi.Example.Utils.Swagger.SwaggerSettings.RoutePrefix">
+            <summary>
+            Gets or sets RoutePrefix.
+            </summary>
+        </member>
+        <member name="P:RestApi.Example.Utils.Swagger.SwaggerSettings.RoutePrefixWithSlash">
+            <summary>
+            Gets Route Prefix with tailing slash.
+            </summary>
+        </member>
+        <member name="T:RestApi.Example.Utils.Swagger.YamlDocumentFilter">
+            <summary>
+            To use YAML serializer to generate YAML
+            </summary>
+        </member>
+        <member name="M:RestApi.Example.Utils.Swagger.YamlDocumentFilter.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RestApi.Example.Utils.Swagger.YamlDocumentFilter"/> class.
+            </summary>
+            <param name="hostingEnvironment">IHostingEnvironment</param>
+        </member>
+        <member name="M:RestApi.Example.Utils.Swagger.YamlDocumentFilter.Apply(Microsoft.OpenApi.Models.OpenApiDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)">
+            <summary>
+            Apply YAML Serializer
+            </summary>
+            <param name="swaggerDoc">SwaggerDocument</param>
+            <param name="context">DocumentFilterContext</param>
+        </member>
+    </members>
+</doc>
