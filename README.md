@@ -5,6 +5,7 @@ Net Core 3.1 (C#), Web API service, Azure Cosmos DB, NUnit, GIT
 # Introduction 
 Microservices for the front end web application (for helping IELTS training)
 Front end. Dev version : https://ieltspractise-test.azurewebsites.net/
+Front end. Product version : https://ieltspreparation.second-language.net/
 
 Author: Pavlo Sofronov. Linkedin: https://www.linkedin.com/in/sofronovpavel/
 
